@@ -298,6 +298,7 @@
 				9E526D2B16C9E64400BC023C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

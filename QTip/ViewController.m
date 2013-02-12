@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "InfoViewController.h"
 
 @interface ViewController ()
 
@@ -90,16 +89,8 @@
     double totalBillWithTip = bill + (bill * tipTotal);
     double eachPersonOwe = totalBillWithTip/people;
     if([_roundupSwitch isOn]){
-        int totalbillinint = totalBillWithTip * 10;
-        double diff = (totalBillWithTip*10) - totalbillinint;
-        if(diff == 0.1 || diff == 0.2){
-            //totalBillWithTip = totalBillWithTip - diff;
-            totalBillWithTip = floor(totalBillWithTip);
-        }else if(diff == 0.3 || diff == 0.4){
-            totalBillWithTip = totalBillWithTip + (0.5 - diff);
-        }
-        eachPersonOwe = ceil(eachPersonOwe);
-        //totalBillWithTip = ceil(totalBillWithTip);
+                eachPersonOwe = ceil(eachPersonOwe);
+        totalBillWithTip = ceil(totalBillWithTip);
     }
     _finalAmount.text = [NSString stringWithFormat:@"$ %.02f", eachPersonOwe];
     _totalBillAfterTip.text = [NSString stringWithFormat:@"$ %.02f",totalBillWithTip];
