@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SettingsViewController.h"
 
 @interface ViewController : UIViewController <UITextFieldDelegate>
+
+{
+    SettingsViewController *settings;
+}
+
+@property (strong, nonatomic) SettingsViewController *settings;
 @property (weak, nonatomic) IBOutlet UITextField *billAmount;
 @property (weak, nonatomic) IBOutlet UITextField *numPeople;
 @property (weak, nonatomic) IBOutlet UISlider *serverSlider;
@@ -33,5 +40,7 @@
 - (IBAction)keyboardNext:(id)sender;
 - (IBAction)keyboardDone:(id)sender;
 - (IBAction)roundUpChange:(id)sender;
+- (IBAction)goToSettings:(id)sender;
+
 
 @end

@@ -135,6 +135,15 @@
     [self calculateFinalAmount:sender];
 }
 
+- (IBAction)goToSettings:(id)sender {
+    if(settings == nil){
+        SettingsViewController *settings = [[SettingsViewController alloc]initWithNibName:@"SettingsViewController" bundle:[NSBundle mainBundle]];
+        self.settings = settings;
+    }
+    
+    [self.navigationController pushViewController:self.settings animated:YES];
+}
+
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     [self calculateFinalAmount:self];
 }
