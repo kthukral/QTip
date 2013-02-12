@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E2F855616C9EEC600182275 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E2F855516C9EEC600182275 /* ViewController.xib */; };
 		9E526D0A16C9E64400BC023C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E526D0916C9E64400BC023C /* UIKit.framework */; };
 		9E526D0C16C9E64400BC023C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E526D0B16C9E64400BC023C /* Foundation.framework */; };
 		9E526D0E16C9E64400BC023C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E526D0D16C9E64400BC023C /* CoreGraphics.framework */; };
@@ -17,10 +18,10 @@
 		9E526D1E16C9E64400BC023C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E526D1D16C9E64400BC023C /* Default@2x.png */; };
 		9E526D2016C9E64400BC023C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E526D1F16C9E64400BC023C /* Default-568h@2x.png */; };
 		9E526D2316C9E64400BC023C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E526D2216C9E64400BC023C /* ViewController.m */; };
-		9E526D2616C9E64400BC023C /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E526D2416C9E64400BC023C /* ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E2F855516C9EEC600182275 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		9E526D0616C9E64400BC023C /* QTip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QTip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E526D0916C9E64400BC023C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9E526D0B16C9E64400BC023C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -36,7 +37,6 @@
 		9E526D1F16C9E64400BC023C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9E526D2116C9E64400BC023C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9E526D2216C9E64400BC023C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		9E526D2516C9E64400BC023C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 				9E526D1916C9E64400BC023C /* AppDelegate.m */,
 				9E526D2116C9E64400BC023C /* ViewController.h */,
 				9E526D2216C9E64400BC023C /* ViewController.m */,
-				9E526D2416C9E64400BC023C /* ViewController.xib */,
+				9E2F855516C9EEC600182275 /* ViewController.xib */,
 				9E526D1016C9E64400BC023C /* Supporting Files */,
 			);
 			path = QTip;
@@ -162,7 +162,7 @@
 				9E526D1C16C9E64400BC023C /* Default.png in Resources */,
 				9E526D1E16C9E64400BC023C /* Default@2x.png in Resources */,
 				9E526D2016C9E64400BC023C /* Default-568h@2x.png in Resources */,
-				9E526D2616C9E64400BC023C /* ViewController.xib in Resources */,
+				9E2F855616C9EEC600182275 /* ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,14 +188,6 @@
 				9E526D1316C9E64400BC023C /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		9E526D2416C9E64400BC023C /* ViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9E526D2516C9E64400BC023C /* en */,
-			);
-			name = ViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
