@@ -8,13 +8,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "QTip/SettingsViewController.m"
-         timestampString = "382473946.396994"
+         timestampString = "382476231.542287"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "48"
          endingLineNumber = "48"
-         landmarkName = "-saveToUserDefaults:"
-         landmarkType = "5">
+         landmarkName = "@implementation SettingsViewController"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"

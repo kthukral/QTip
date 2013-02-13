@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SettingsViewController.h"
 
-@interface ViewController : UIViewController <UITextFieldDelegate>
+@interface ViewController : UIViewController <UITextFieldDelegate, SettingsViewControllerDelegate>
 
 {
     SettingsViewController *settings;

@@ -135,13 +135,22 @@
 
 
 - (IBAction)goToSettings:(id)sender {
-    if(settings == nil){
+    /*if(settings == nil){
         SettingsViewController *settings = [[SettingsViewController alloc]initWithNibName:@"SettingsViewController" bundle:[NSBundle mainBundle]];
         self.settings = settings;
     }
     //settings.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     //[self presentModalViewController:infoViewController animated:YES];
-    [self.navigationController pushViewController:self.settings animated:YES];
+    [self.navigationController pushViewController:self.settings animated:YES];*/
+    
+    SettingsViewController *settingsView = [[SettingsViewController alloc]initWithNibName:@"SettingsViewController" bundle:nil];
+    settingsView.delegate = self;
+    settingsView.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:settingsView animated:YES completion:nil];
+}
+
+- (void) settingsViewControllerDidFinish:(SettingsViewController *)controller{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)reCalculate:(id)sender {

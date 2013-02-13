@@ -28,10 +28,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleBordered target:self action:@selector(Save:)];
-    [self.navigationItem setRightBarButtonItem:doneButton];
-    [self.navigationItem setTitle:@"Settings"];
-    [self.navigationItem setHidesBackButton:YES animated:YES];
+    //UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleBordered target:self action:@selector(Save:)];
+    //[self.navigationItem setRightBarButtonItem:doneButton];
+    //[self.navigationItem setTitle:@"Settings"];
+    //[self.navigationItem setHidesBackButton:YES animated:YES];
     if([[self retrieveFromUserDefaults] isEqualToString:@"YES"]){
         [_roundUpSettings setOn:YES];
     }else if([[self retrieveFromUserDefaults] isEqualToString:@"NO"]){
@@ -40,7 +40,8 @@
 }
 
 - (void)Save:sender{
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    /*[self.navigationController popToRootViewControllerAnimated:YES];*/
+    [self.delegate settingsViewControllerDidFinish:self];
     NSString *state;
     [self saveToUserDefaults:state];
 }
@@ -76,6 +77,5 @@
     
     return roundupState;
 }
-
 
 @end

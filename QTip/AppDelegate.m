@@ -21,12 +21,18 @@
     [self.window makeKeyAndVisible];
     return YES;*/
     
-    UIViewController *myViewController = [[ViewController alloc] init];
+    /*UIViewController *myViewController = [[ViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc]
                             initWithRootViewController:myViewController];
     
    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = navigationController;
+    [self.window makeKeyAndVisible];
+    return YES;*/
+    
+    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
+    self.viewController = [[ViewController alloc]initWithNibName:@"ViewController" bundle:nil];
+    self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
     
