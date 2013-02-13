@@ -27,7 +27,16 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleBordered target:self action:@selector(Save:)];
+    [self.navigationItem setRightBarButtonItem:doneButton];
 }
+
+- (void)Save:sender{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
