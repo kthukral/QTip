@@ -27,7 +27,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *finalAmount;
 @property (weak, nonatomic) IBOutlet UILabel *totalTip;
 @property (weak, nonatomic) IBOutlet UILabel *totalBillAfterTip;
-@property (weak, nonatomic) IBOutlet UISwitch *roundupSwitch;
 @property (weak, nonatomic) IBOutlet UILabel *tipinmoney;
 @property (strong, nonatomic) IBOutlet UIView *keyboardBar;
 @property (strong, nonatomic) IBOutlet UIView *keyboardBar2;
@@ -39,8 +38,8 @@
 - (IBAction)keyboardBack:(id)sender;
 - (IBAction)keyboardNext:(id)sender;
 - (IBAction)keyboardDone:(id)sender;
-- (IBAction)roundUpChange:(id)sender;
 - (IBAction)goToSettings:(id)sender;
+- (IBAction)reCalculate:(id)sender;
 
 
 @end

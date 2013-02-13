@@ -25,7 +25,6 @@
 @synthesize ambianceRating = _ambianceRating;
 @synthesize totalTip = _totalTip;
 @synthesize totalBillAfterTip = _totalBillAfterTip;
-@synthesize roundupSwitch = _roundupSwitch;
 @synthesize tipinmoney = _tipinmoney;
 @synthesize keyboardBar = _keyboardBar;
 @synthesize keyboardBar2 = _keyboardBar2;
@@ -46,6 +45,8 @@
     
     _billAmount.inputAccessoryView = _keyboardBar;
     _numPeople.inputAccessoryView = _keyboardBar2;
+    
+    [self.navigationItem setTitle:@"Q-Tip"];
 
 }
 
@@ -88,7 +89,7 @@
     
     double totalBillWithTip = bill + (bill * tipTotal);
     double eachPersonOwe = totalBillWithTip/people;
-    if([_roundupSwitch isOn]){
+    if([[self retrieveFromUserDefaults] isEqualToString:@"YES"]){
                 eachPersonOwe = ceil(eachPersonOwe);
         totalBillWithTip = ceil(totalBillWithTip);
     }
@@ -131,21 +132,35 @@
         [_numPeople resignFirstResponder];
 }
 
-- (IBAction)roundUpChange:(id)sender {
-    [self calculateFinalAmount:sender];
-}
+
 
 - (IBAction)goToSettings:(id)sender {
     if(settings == nil){
         SettingsViewController *settings = [[SettingsViewController alloc]initWithNibName:@"SettingsViewController" bundle:[NSBundle mainBundle]];
         self.settings = settings;
     }
-    
+    //settings.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    //[self presentModalViewController:infoViewController animated:YES];
     [self.navigationController pushViewController:self.settings animated:YES];
+}
+
+- (IBAction)reCalculate:(id)sender {
+    [self calculateFinalAmount:sender];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     [self calculateFinalAmount:self];
+}
+
+-(NSString*)retrieveFromUserDefaults
+{
+    NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *roundupState = nil;
+    
+    if (standardUserDefaults)
+        roundupState = [standardUserDefaults objectForKey:@"RoundUpSwitch"];
+    
+    return roundupState;
 }
 
 
