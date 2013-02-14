@@ -31,7 +31,6 @@
 @property (strong, nonatomic) IBOutlet UIView *keyboardBar;
 @property (strong, nonatomic) IBOutlet UIView *keyboardBar2;
 - (IBAction)dismissKeyboard:(id)sender;
-- (IBAction)calculateFinalAmount:(id)sender;
 - (IBAction)serverSliderChange:(id)sender;
 - (IBAction)foodSliderChange:(id)sender;
 - (IBAction)ambianceSliderChange:(id)sender;
@@ -39,7 +38,5 @@
 - (IBAction)keyboardNext:(id)sender;
 - (IBAction)keyboardDone:(id)sender;
 - (IBAction)goToSettings:(id)sender;
-- (IBAction)reCalculate:(id)sender;
-
-
+-(void)calculateFinalAmount;
 @end

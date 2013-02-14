@@ -18,6 +18,7 @@
 		9E526D1E16C9E64400BC023C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E526D1D16C9E64400BC023C /* Default@2x.png */; };
 		9E526D2016C9E64400BC023C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E526D1F16C9E64400BC023C /* Default-568h@2x.png */; };
 		9E526D2316C9E64400BC023C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E526D2216C9E64400BC023C /* ViewController.m */; };
+		9EF3AAAB16CC6611006C5A60 /* juxtapositionneue_iphone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9EF3AAAA16CC6611006C5A60 /* juxtapositionneue_iphone.jpg */; };
 		B8D810CD16CAA95800A330D7 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D810CB16CAA95800A330D7 /* SettingsViewController.m */; };
 		B8D810CE16CAA95800A330D7 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D810CC16CAA95800A330D7 /* SettingsViewController.xib */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,7 @@
 		9E526D1F16C9E64400BC023C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9E526D2116C9E64400BC023C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9E526D2216C9E64400BC023C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9EF3AAAA16CC6611006C5A60 /* juxtapositionneue_iphone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = juxtapositionneue_iphone.jpg; sourceTree = "<group>"; };
 		B8D810CA16CAA95800A330D7 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		B8D810CB16CAA95800A330D7 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		B8D810CC16CAA95800A330D7 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		9E526D1016C9E64400BC023C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9EF3AAAA16CC6611006C5A60 /* juxtapositionneue_iphone.jpg */,
 				9E526D1116C9E64400BC023C /* QTip-Info.plist */,
 				9E526D1216C9E64400BC023C /* InfoPlist.strings */,
 				9E526D1516C9E64400BC023C /* main.m */,
@@ -172,6 +175,7 @@
 				9E526D2016C9E64400BC023C /* Default-568h@2x.png in Resources */,
 				9E2F855616C9EEC600182275 /* ViewController.xib in Resources */,
 				B8D810CE16CAA95800A330D7 /* SettingsViewController.xib in Resources */,
+				9EF3AAAB16CC6611006C5A60 /* juxtapositionneue_iphone.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
