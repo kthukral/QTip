@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "InfoViewController.h"
 
 @interface ViewController ()
 
@@ -26,10 +25,10 @@
 @synthesize ambianceRating = _ambianceRating;
 @synthesize totalTip = _totalTip;
 @synthesize totalBillAfterTip = _totalBillAfterTip;
-@synthesize roundupSwitch = _roundupSwitch;
 @synthesize tipinmoney = _tipinmoney;
 @synthesize keyboardBar = _keyboardBar;
 @synthesize keyboardBar2 = _keyboardBar2;
+@synthesize settings = settings;
 
 
 - (void)viewDidLoad
@@ -47,7 +46,16 @@
     
     _billAmount.inputAccessoryView = _keyboardBar;
     _numPeople.inputAccessoryView = _keyboardBar2;
+    
+    //*** USE FOR NAVIGATION CONTROLLER
+    //[self.navigationItem setTitle:@"Q-Tip"];
+        
+}
 
+- (void)viewDidAppear:(BOOL)animated{
+    if(![_billAmount.text isEqualToString:@""]){
+    [self calculateFinalAmount];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,7 +73,7 @@
     }
 }
 
-- (IBAction)calculateFinalAmount:(id)sender {
+- (void)calculateFinalAmount{
     double bill;
     int people;
     
@@ -79,8 +87,8 @@
         people = [_numPeople.text intValue];
     }
     
-    double serverTip = [_serverRating.text doubleValue] * 0.006;
-    double foodTip = [_foodRating.text doubleValue] * 0.004;
+    double serverTip = [_serverRating.text doubleValue] * 0.004;
+    double foodTip = [_foodRating.text doubleValue] * 0.007;
     double ambiamceTip = [_ambianceRating.text doubleValue] * 0.002;
     double tipTotal = serverTip+foodTip+ambiamceTip;
     
@@ -89,47 +97,39 @@
     
     double totalBillWithTip = bill + (bill * tipTotal);
     double eachPersonOwe = totalBillWithTip/people;
-    if([_roundupSwitch isOn]){
-        int totalbillinint = totalBillWithTip * 10;
-        double diff = (totalBillWithTip*10) - totalbillinint;
-        if(diff == 0.1 || diff == 0.2){
-            //totalBillWithTip = totalBillWithTip - diff;
-            totalBillWithTip = floor(totalBillWithTip);
-        }else if(diff == 0.3 || diff == 0.4){
-            totalBillWithTip = totalBillWithTip + (0.5 - diff);
-        }
+    if([[self retrieveFromUserDefaults] isEqualToString:@"YES"]){
         eachPersonOwe = ceil(eachPersonOwe);
-        //totalBillWithTip = ceil(totalBillWithTip);
+        totalBillWithTip = ceil(totalBillWithTip);
     }
     _finalAmount.text = [NSString stringWithFormat:@"$ %.02f", eachPersonOwe];
     _totalBillAfterTip.text = [NSString stringWithFormat:@"$ %.02f",totalBillWithTip];
-
+    
 }
 
 - (IBAction)serverSliderChange:(id)sender {
-     _serverRating.text = [NSString stringWithFormat:@"%.02f",_serverSlider.value];
-    [self calculateFinalAmount:sender];
+    _serverRating.text = [NSString stringWithFormat:@"%.02f",_serverSlider.value];
+    [self calculateFinalAmount];
 }
 
 - (IBAction)foodSliderChange:(id)sender {
-     _foodRating.text = [NSString stringWithFormat:@"%.02f",_foodSlider.value];
-    [self calculateFinalAmount:sender];
+    _foodRating.text = [NSString stringWithFormat:@"%.02f",_foodSlider.value];
+    [self calculateFinalAmount];
 }
 
 - (IBAction)ambianceSliderChange:(id)sender {
-     _ambianceRating.text = [NSString stringWithFormat:@"%.02f",_ambianceSlider.value];
-    [self calculateFinalAmount:sender];
+    _ambianceRating.text = [NSString stringWithFormat:@"%.02f",_ambianceSlider.value];
+    [self calculateFinalAmount];
 }
 
 - (IBAction)keyboardBack:(id)sender {
     
-        [_numPeople resignFirstResponder];
-        [_billAmount becomeFirstResponder];
+    [_numPeople resignFirstResponder];
+    [_billAmount becomeFirstResponder];
 }
 
 - (IBAction)keyboardNext:(id)sender {
-        [_billAmount resignFirstResponder];
-        [_numPeople becomeFirstResponder];
+    [_billAmount resignFirstResponder];
+    [_numPeople becomeFirstResponder];
     
 }
 
@@ -140,13 +140,42 @@
         [_numPeople resignFirstResponder];
 }
 
-- (IBAction)roundUpChange:(id)sender {
-    [self calculateFinalAmount:sender];
+
+- (IBAction)goToSettings:(id)sender {
+//*** THIS IS FOR THE USE OF A NAVIGATION CONTROLLER
+    /*if(settings == nil){
+     SettingsViewController *settings = [[SettingsViewController alloc]initWithNibName:@"SettingsViewController" bundle:[NSBundle mainBundle]];
+     self.settings = settings;
+     }
+     //settings.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+     //[self presentModalViewController:infoViewController animated:YES];
+     [self.navigationController pushViewController:self.settings animated:YES];*/
+    
+    SettingsViewController *settingsView = [[SettingsViewController alloc]initWithNibName:@"SettingsViewController" bundle:nil];
+    settingsView.delegate = self;
+    settingsView.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:settingsView animated:YES completion:nil];
+}
+
+- (void) settingsViewControllerDidFinish:(SettingsViewController *)controller{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
-    [self calculateFinalAmount:self];
+    [self calculateFinalAmount];
 }
+
+-(NSString*)retrieveFromUserDefaults
+{
+    NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *roundupState = nil;
+    
+    if (standardUserDefaults)
+        roundupState = [standardUserDefaults objectForKey:@"RoundUpSwitch"];
+    
+    return roundupState;
+}
+
 
 
 @end

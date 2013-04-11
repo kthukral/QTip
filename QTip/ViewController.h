@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SettingsViewController.h"
 
-@interface ViewController : UIViewController <UITextFieldDelegate>
+@interface ViewController : UIViewController <UITextFieldDelegate, SettingsViewControllerDelegate>
+
+{
+    SettingsViewController *settings;
+}
+
+@property (strong, nonatomic) SettingsViewController *settings;
 @property (weak, nonatomic) IBOutlet UITextField *billAmount;
 @property (weak, nonatomic) IBOutlet UITextField *numPeople;
 @property (weak, nonatomic) IBOutlet UISlider *serverSlider;
@@ -20,18 +27,16 @@
 @property (weak, nonatomic) IBOutlet UILabel *finalAmount;
 @property (weak, nonatomic) IBOutlet UILabel *totalTip;
 @property (weak, nonatomic) IBOutlet UILabel *totalBillAfterTip;
-@property (weak, nonatomic) IBOutlet UISwitch *roundupSwitch;
 @property (weak, nonatomic) IBOutlet UILabel *tipinmoney;
 @property (strong, nonatomic) IBOutlet UIView *keyboardBar;
 @property (strong, nonatomic) IBOutlet UIView *keyboardBar2;
 - (IBAction)dismissKeyboard:(id)sender;
-- (IBAction)calculateFinalAmount:(id)sender;
 - (IBAction)serverSliderChange:(id)sender;
 - (IBAction)foodSliderChange:(id)sender;
 - (IBAction)ambianceSliderChange:(id)sender;
 - (IBAction)keyboardBack:(id)sender;
 - (IBAction)keyboardNext:(id)sender;
 - (IBAction)keyboardDone:(id)sender;
-- (IBAction)roundUpChange:(id)sender;
-
+- (IBAction)goToSettings:(id)sender;
+-(void)calculateFinalAmount;
 @end
