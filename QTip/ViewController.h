@@ -12,7 +12,7 @@
 @interface ViewController : UIViewController <UITextFieldDelegate, SettingsViewControllerDelegate>
 
 {
-    SettingsViewController *settings;
+    SettingsViewController *settings; //instance of the settings view controller
 }
 
 @property (strong, nonatomic) SettingsViewController *settings;
@@ -30,6 +30,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *tipinmoney;
 @property (strong, nonatomic) IBOutlet UIView *keyboardBar;
 @property (strong, nonatomic) IBOutlet UIView *keyboardBar2;
+
+//Actions
+
 - (IBAction)dismissKeyboard:(id)sender;
 - (IBAction)serverSliderChange:(id)sender;
 - (IBAction)foodSliderChange:(id)sender;

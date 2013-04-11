@@ -10,15 +10,18 @@
 
 @class SettingsViewController;
 
+//Setting up protocol that its delegate has to follow (dismissing the view)
+
 @protocol SettingsViewControllerDelegate
 - (void)settingsViewControllerDidFinish:(SettingsViewController *)controller;
 @end
 
 @interface SettingsViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UISwitch *roundUpSettings;
 
-@property (weak,nonatomic) id <SettingsViewControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UISwitch *roundUpSettings; //round up switch
 
-- (IBAction)Save:(id)sender;
+@property (weak,nonatomic) id <SettingsViewControllerDelegate> delegate; //delegate
+
+- (IBAction)Save:(id)sender; //Save button
 
 @end
