@@ -8,20 +8,20 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "QTip/SettingsViewController.m"
-         timestampString = "382476231.542287"
+         timestampString = "387388300.52011"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "48"
-         endingLineNumber = "48"
-         landmarkName = "@implementation SettingsViewController"
-         landmarkType = "3">
+         startingLineNumber = "58"
+         endingLineNumber = "58"
+         landmarkName = "-Save:"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "QTip/SettingsViewController.m"
-         timestampString = "382472903.428607"
+         timestampString = "387388300.52011"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "31"

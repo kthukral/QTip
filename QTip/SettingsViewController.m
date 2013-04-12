@@ -29,10 +29,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    // *** FOR USE IN NAVIGATION CONTROLLER ***
+    
     //UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleBordered target:self action:@selector(Save:)];
     //[self.navigationItem setRightBarButtonItem:doneButton];
     //[self.navigationItem setTitle:@"Settings"];
     //[self.navigationItem setHidesBackButton:YES animated:YES];
+    //Setting the switch state to what was saved previously
+    
     if([[self retrieveFromUserDefaults] isEqualToString:@"YES"]){
         [_roundUpSettings setOn:YES];
     }else if([[self retrieveFromUserDefaults] isEqualToString:@"NO"]){
@@ -40,13 +44,20 @@
     }
 }
 
-- (void)Save:sender{
+
+
+- (IBAction)Save:sender{
+    // *** FOR USE WITH NAVIGATION CONTROLLER
     /*[self.navigationController popToRootViewControllerAnimated:YES];*/
+    
+    //Saving the sate of the round up switch
+    
     [self.delegate settingsViewControllerDidFinish:self];
     NSString *state;
     [self saveToUserDefaults:state];
 }
 
+//Saving the round up state to the device
 -(void)saveToUserDefaults:(NSString*)roundUpState
 {
     NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
@@ -67,6 +78,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//Retrieving the round up switch state saved previously
 
 -(NSString*)retrieveFromUserDefaults
 {

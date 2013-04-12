@@ -14,6 +14,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // The commented code is to use navigation controller to move between the main view and settings view
+    
     /*self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
@@ -29,6 +31,8 @@
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     return YES;*/
+    
+    // Using flip view controller instead or navigation controller to move between views
     
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     self.viewController = [[ViewController alloc]initWithNibName:@"ViewController" bundle:nil];
