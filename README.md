@@ -1,4 +1,4 @@
-QTip
+== QTip
 
 This is a prototype application for iPhone called Qtip or Quality Tipper. The application is a simple tipper application
 which requires the bill amount and number of people as input and instead of you providing a tip percentage, you rate your experience
