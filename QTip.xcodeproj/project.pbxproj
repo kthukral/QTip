@@ -92,9 +92,9 @@
 				9E526D1916C9E64400BC023C /* AppDelegate.m */,
 				9E526D2116C9E64400BC023C /* ViewController.h */,
 				9E526D2216C9E64400BC023C /* ViewController.m */,
-				9E2F855516C9EEC600182275 /* ViewController.xib */,
 				B8D810CA16CAA95800A330D7 /* SettingsViewController.h */,
 				B8D810CB16CAA95800A330D7 /* SettingsViewController.m */,
+				9E2F855516C9EEC600182275 /* ViewController.xib */,
 				B8D810CC16CAA95800A330D7 /* SettingsViewController.xib */,
 				9E526D1016C9E64400BC023C /* Supporting Files */,
 			);

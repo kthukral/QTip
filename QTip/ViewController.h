@@ -41,5 +41,5 @@
 - (IBAction)keyboardNext:(id)sender;
 - (IBAction)keyboardDone:(id)sender;
 - (IBAction)goToSettings:(id)sender;
--(void)calculateFinalAmount;
+- (void)calculateFinalAmount;
 @end

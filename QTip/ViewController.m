@@ -125,7 +125,7 @@
     
     double eachPersonOwe = totalBillWithTip/people; //dividing the bill among num people
     
-    //Checking if rounf up is turned on in settings
+    //Checking if round up is turned on in settings
     if([[self retrieveFromUserDefaults] isEqualToString:@"YES"]){
         
         //rounding up the bill
